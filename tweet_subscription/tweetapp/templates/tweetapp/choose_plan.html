@@ -1,0 +1,20 @@
+<form method="POST" action="{% url 'pay' %}">
+   <!-- Payment Form -->
+   <h2>Choose Your Subscription Plan</h2>
+   <form method="POST">
+       {% csrf_token %}
+       
+       <!-- Select plan -->
+       <div class="form-group">
+           <label for="plan">Choose a plan:</label>
+           <select name="plan" id="plan" class="form-control">
+               <option value="free">Free Plan (1 Tweet)</option>
+               <option value="bronze">Bronze Plan (₹100/month - 3 Tweets)</option>
+               <option value="silver">Silver Plan (₹300/month - 5 Tweets)</option>
+               <option value="gold">Gold Plan (₹1000/month - Unlimited Tweets)</option>
+           </select>
+       </div>
+       
+       <!-- Submit Button -->
+       <button type="submit" class="btn btn-primary">Subscribe</button>
+</form>

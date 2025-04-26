@@ -1,0 +1,23 @@
+<!-- tweetapp/templates/tweetapp/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Tweet Subscription{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>TweetApp</h1>
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <p>© 2025 TweetApp</p>
+    </footer>
+</body>
+</html>
