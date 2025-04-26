@@ -19,7 +19,7 @@ client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_SECRE
 def is_payment_time():
     ist = timezone('Asia/Kolkata')
     current_hour = now().astimezone(ist).hour
-    return current_hour == 14  # Only between 10 AM to 11 AM
+    return current_hour == 10  # Only between 10 AM to 11 AM
 
 
 
@@ -40,7 +40,7 @@ def pay(request):
     # Restrict payment to between 10 AM and 11 AM IST
     india = timezone('Asia/Kolkata')
     now = datetime.now(india)
-    if not (14<= now.hour < 15):
+    if not (10<= now.hour < 11):
         return HttpResponse("❌ Payment is only allowed between 10 AM and 11 AM IST.")
 
     # Plan pricing (in paise)
